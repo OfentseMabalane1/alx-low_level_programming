@@ -1,29 +1,21 @@
-#include <unistd.h>
 #include <stdio.h>
+#include <ctype.h>
 
 /**
- * main - Entry point
- * a program that prints all single digit numbers of base 10 starting from 0
- * followed by a newline.
- * Return 0 (Success)
+ * main - main block
+ * Description: Get a random number and print the number
+ * positive,negative or zero
+ * Return: Always 0 (success)
  */
-
-#include <unistd.h>
-
-void  numbers(void)
-{
-    int num;
-
-    num = '0';
-    while (num <= '9')
-    {
-      write(1, &num, 1);
-      num++;
-    }
-    return (0);
-}
 
 int main(void)
 {
+	int digit;
+
+	for (digit = '0'; digit <= '9'; digit++)
+	{
+		putchar(digit);
+	}
+	putchar('\n');
 	return (0);
 }
