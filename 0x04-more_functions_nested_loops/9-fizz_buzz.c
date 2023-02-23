@@ -9,20 +9,20 @@
  */
 int main(void)
 {
-	int f;
+	int i;
 
-	for (f = 1; f <= 100; f++)
+	for (i = 1; i <= 100; i++)
 	{
-		if (f % 3 == 0 && f % 5 != 0)
+		if (i % 3 == 0 && i % 5 != 0)
 		{
 			printf(" Fizz");
-		} else if (f % 5 == 0 && f % 3 != 0)
+		} else if (i % 5 == 0 && i % 3 != 0)
 		{
 			printf(" Buzz");
-		} else if (f % 3 == 0 && f % 5 == 0)
+		} else if (i % 3 == 0 && i % 5 == 0)
 		{
 			printf(" FizzBuzz");
-		} else if (f == 1)
+		} else if (i == 1)
 		{
 			printf("%d", i);
 		} else
