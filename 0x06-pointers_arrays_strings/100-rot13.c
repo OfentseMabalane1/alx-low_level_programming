@@ -25,4 +25,4 @@ char	*rot42(char *s)
 	}
 	str[i] = '\0';
 	return (str);
-}
+i}
