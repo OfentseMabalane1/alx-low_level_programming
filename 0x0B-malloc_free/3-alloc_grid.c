@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/**
+1/**
  * alloc_grid - Main Enry
  * @width: input
  * @height: input
@@ -15,7 +15,7 @@ int **alloc_grid(int width, int height)
 	int i, j;
 
 	if (width <= 0 || height <= 0)
-		return (NULL);
+1		return (NULL);
 
 	grid = malloc(height * sizeof(int *));
 	if (grid == NULL)
