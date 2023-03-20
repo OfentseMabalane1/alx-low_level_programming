@@ -1,16 +1,14 @@
+#include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
 
 /**
- * Write a function that prints a struct dog
- * Prototype: void print_dog(struct dog *d);
- * you are allowed to use the standard library
- * If an element of d is NULL, print (nil) instead of this element. 
- * (if name is NULL, print Name: (nil))
- * If d is NULL print nothing.
- * */
+ * print_dog - Prints name, age and owner if not null.
+ * @d: is pointer to the struct dog.
+ * You are allowed to use the standard library
+**/
 
-void print_dog(struct dog *d);
+void print_dog(struct dog *d)
 {
 	if (d == NULL)
 	{
