@@ -6,7 +6,7 @@
  * @head: pointer to the head of the list
  * @idx: index of the list where the new node will be added
  *       (indices start at 0)
- * @n value for the new node to be added
+ * @n: value for the new node to be added
  * Return: node, NULL on fail
  */
 
