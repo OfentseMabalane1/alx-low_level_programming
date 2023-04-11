@@ -5,44 +5,44 @@ void _close(int fd);
 
 /**
  * main - program entry point
- * @ac: argument count
- * @av: arguement vector
+ * @argc: argument counter
+ * @argv: arguement vector
  *
- * Return: 0 on success
+ * Return: 0 always
  */
 
 int main(int argc, char **argv)
 {
-	int src, dest, length;
+	int fd_src, fd_dest, len;
 	char buff[1024];
 
 	if (argc != 3)
 		errorMsg("Usage: %s file_from file_to\n", argv[0], 97);
 
-	src = open(argv[1], O_RDONLY);
-	if (src == -1)
+	fd_src = open(argv[1], O_RDONLY);
+	if (fd_src == -1)
 		errorMsg("Error: Can't read from file %s\n", argv[1], 98);
 
-	dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (dest == -1)
+	fd_dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (fd_dest == -1)
 	{
-		_close(src);
+		_close(fd_src);
 		errorMsg("Error: Can't write to %s\n", argv[2], 99);
 	}
 
-	length = read(src, buff, sizeof(buff));
-	while (length > 0)
+	len = read(fd_src, buff, sizeof(buff));
+	while (len > 0)
 	{
-		if (write(dest, buff, length) == -1)
+		if (write(fd_dest, buff, len) == -1)
 		{
-			_close(dest);
-			_close(src);
+			_close(fd_dest);
+			_close(fd_src);
 			errorMsg("Error: Can't write to %s\n", argv[2], 99);
 		}
-		length = read(src, buff, sizeof(buff));
+		len = read(fd_src, buff, sizeof(buff));
 	}
-	_close(dest);
-	_close(src);
+	_close(fd_dest);
+	_close(fd_src);
 	return (0);
 }
 
